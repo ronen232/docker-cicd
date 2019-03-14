@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://github.com/ronen232/docker-cicd', 'cef71b4f-08bb-4552-b8b9-5652659c9b1c') {
+     docker.withRegistry('https://github.com/ronen232/docker-cicd/', 'cef71b4f-08bb-4552-b8b9-5652659c9b1c') {
        def app = docker.build("ronen232/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
